@@ -1,0 +1,3 @@
+include ':Neomarpism'
+include ':app'
+rootProject.name = "CreditScoreUi"

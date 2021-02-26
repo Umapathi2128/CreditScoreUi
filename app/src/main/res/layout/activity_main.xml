@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_100">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dp20" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dp20" />
+        <com.uma.neomarpism.NeumorphCardView
+            android:id="@+id/edittext_card"
+            style="@style/Widget.Neumorph.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            app:layout_constraintEnd_toEndOf="@id/guideRight"
+            app:layout_constraintStart_toStartOf="@id/guideLeft"
+            app:layout_constraintTop_toTopOf="parent"
+            app:neumorph_shapeType="flat">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp">
+
+                <com.uma.neomarpism.NeumorphImageButton
+                    android:id="@+id/btn_back"
+                    style="@style/Widget.Neumorph.ImageButton"
+                    android:layout_width="@dimen/dp58"
+                    android:layout_height="@dimen/dp58"
+                    android:src="@drawable/ic_left"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp12"
+                    android:layout_marginEnd="@dimen/dp12"
+                    android:singleLine="true"
+                    android:textSize="@dimen/large"
+                    android:textColor="@color/card_number_color"
+                    android:text="@string/bill_payment"
+                    app:layout_constraintStart_toEndOf="@id/btn_back" />
+            </LinearLayout>
+
+        </com.uma.neomarpism.NeumorphCardView>
+
+        <com.uma.neomarpism.NeumorphImageButton
+            android:id="@+id/img_bank_logo"
+            style="@style/Widget.Neumorph.ImageButton"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginLeft="@dimen/dp12"
+            android:layout_marginTop="@dimen/dp20"
+            android:src="@drawable/icon_star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edittext_card" />
+
+        <TextView
+            android:id="@+id/txt_bank_acno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/medium"
+            android:textColor="@color/card_number_color"
+            app:layout_constraintBottom_toBottomOf="@id/img_bank_logo"
+            app:layout_constraintLeft_toRightOf="@id/img_bank_logo"
+            app:layout_constraintTop_toTopOf="@id/img_bank_logo" />
+
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp12"
+            android:textColor="@color/card_number_color"
+            app:layout_constraintBottom_toBottomOf="@id/img_bank_logo"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_bank_logo" />
+
+        <ImageView
+            android:id="@+id/img_date_icon"
+            android:layout_width="@dimen/dp13"
+            android:layout_height="@dimen/dp13"
+            android:layout_marginRight="@dimen/dp7"
+            android:src="@drawable/icon_timer"
+            app:layout_constraintBottom_toBottomOf="@id/img_bank_logo"
+            app:layout_constraintRight_toLeftOf="@id/txt_date"
+            app:layout_constraintTop_toTopOf="@id/img_bank_logo" />
+
+        <TextView
+            android:id="@+id/txt_total_due"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:text="@string/total_due"
+            app:layout_constraintLeft_toLeftOf="@id/guideLeft"
+            app:layout_constraintTop_toBottomOf="@id/txt_date" />
+
+        <TextView
+            android:id="@+id/txt_total_due_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:textSize="@dimen/subtitle"
+            android:textColor="@color/amount_text_color"
+            app:layout_constraintRight_toRightOf="@id/guideRight"
+            app:layout_constraintTop_toBottomOf="@id/txt_date" />
+
+        <com.uma.creditscoreui.widgets.Circle
+            android:id="@+id/score_circle"
+            android:layout_width="@dimen/dp350"
+            android:layout_height="@dimen/dp200"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp8"
+            android:layout_marginBottom="@dimen/dp8"
+            android:width="@dimen/dp16"
+            android:background="@drawable/icon_pay_half_circle"
+            android:color="@android:color/holo_blue_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_total_due_amount" />
+
+        <com.uma.creditscoreui.widgets.Circle
+            android:id="@+id/score_circle_animation"
+            android:layout_width="@dimen/dp320"
+            android:layout_height="@dimen/dp305"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp37"
+            android:layout_marginEnd="@dimen/dp8"
+            android:layout_marginBottom="@dimen/dp8"
+            android:width="20dp"
+            android:color="@color/progress_color"
+            android:rotation="-90"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_total_due_amount" />
+
+
+
+        <TextView
+            android:id="@+id/txt_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp8"
+            android:text="@string/paying"
+            android:textColor="@color/card_number_color"
+            app:layout_constraintBottom_toTopOf="@+id/txt_pay_amount"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+        <TextView
+            android:id="@+id/txt_pay_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp8"
+            android:layout_marginBottom="@dimen/dp8"
+            android:fontFamily="monospace"
+            android:textSize="@dimen/sp34"
+            android:textStyle="normal"
+            android:text="345506"
+            android:textColor="@color/amount_text_color"
+            app:layout_constraintBottom_toBottomOf="@+id/score_circle_animation"
+            app:layout_constraintEnd_toEndOf="@+id/score_circle_animation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/score_circle_animation"
+            app:layout_constraintTop_toTopOf="@+id/score_circle_animation"
+            />
+        <ImageView
+            android:id="@+id/img_view_breakdown"
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp4"
+            android:src="@drawable/icon_addition_hint"
+            app:layout_constraintRight_toLeftOf="@+id/txt_breakdown"
+            app:layout_constraintTop_toTopOf="@id/txt_breakdown" />
+
+        <TextView
+            android:id="@+id/txt_breakdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:text="@string/breakdown"
+            android:textColor="@color/card_number_color"
+            app:layout_constraintLeft_toLeftOf="@id/guideLeft"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_pay_amount" />
+
+        <com.uma.neomarpism.NeumorphButton
+            android:id="@+id/btn_minimum"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginTop="30dp"
+            android:scaleType="centerInside"
+            android:text="@string/minimum"
+            app:layout_constraintRight_toLeftOf="@id/btn_custom"
+            app:layout_constraintTop_toBottomOf="@id/txt_breakdown" />
+
+        <com.uma.neomarpism.NeumorphButton
+            android:id="@+id/btn_custom"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp70"
+            android:layout_marginTop="@dimen/dp30"
+            android:scaleType="centerInside"
+            android:text="@string/custom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_breakdown" />
+
+        <com.uma.neomarpism.NeumorphButton
+            android:id="@+id/btn_total"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp70"
+            android:layout_marginTop="@dimen/dp30"
+            android:scaleType="centerInside"
+            android:text="@string/total"
+            app:layout_constraintLeft_toRightOf="@id/btn_custom"
+            app:layout_constraintTop_toBottomOf="@id/txt_breakdown"
+            app:neumorph_shapeType="pressed" />
+
+        <com.uma.neomarpism.NeumorphImageButton
+            android:id="@+id/img_star"
+            style="@style/Widget.Neumorph.ImageButton"
+            android:layout_width="@dimen/dp58"
+            android:layout_height="@dimen/dp58"
+            android:layout_marginLeft="@dimen/dp12"
+            android:layout_marginTop="@dimen/dp50"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_star"
+            android:padding="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_custom" />
+
+        <TextView
+            android:id="@+id/txt_news_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp15"
+            android:textColor="@color/card_number_color"
+            android:text="@string/good_news"
+            app:layout_constraintBottom_toBottomOf="@id/img_star"
+            app:layout_constraintLeft_toRightOf="@id/img_star"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_star" />
+
+        <com.uma.neomarpism.NeumorphImageButton
+            android:id="@+id/img_settle_bill"
+            style="@style/Widget.Neumorph.ImageButton"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginLeft="@dimen/dp12"
+            android:layout_marginTop="@dimen/dp40"
+            android:padding="@dimen/dp20"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_timer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_star" />
+
+        <TextView
+            android:id="@+id/txt_settle_bill"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp15"
+            android:textColor="@color/card_number_color"
+            android:text="@string/settle_bill"
+            app:layout_constraintBottom_toBottomOf="@id/img_settle_bill"
+            app:layout_constraintLeft_toRightOf="@id/img_settle_bill"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_settle_bill" />
+
+        <com.uma.neomarpism.NeumorphCardView
+            android:id="@+id/btn_payment"
+            style="@style/Widget.Neumorph.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp30"
+            android:layout_marginEnd="@dimen/dp8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_settle_bill"
+            app:neumorph_shapeType="flat">
+
+            <TextView
+                android:id="@+id/txt_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:padding="@dimen/dp20"
+                android:textSize="@dimen/large"
+                android:textColor="@color/amount_text_color"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </com.uma.neomarpism.NeumorphCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

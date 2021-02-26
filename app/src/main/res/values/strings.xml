@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CreditScoreUi</string>
+    <string name="rupee">\u20B9</string>
+    <string name="text_with_bullet">\u2022</string>
+
+    <string name="bill_payment">Bill Payment</string>
+    <string name="total_due">Total Due</string>
+    <string name="paying">paying</string>
+    <string name="breakdown">View Breakdowm</string>
+    <string name="minimum">minimum</string>
+    <string name="custom">custom</string>
+    <string name="total">total</string>
+
+    <string name="good_news">Good News! Paying Total amount removes interest &amp; additional fees and helps build your credit score</string>
+    <string name="settle_bill">Settle your bill before due date to avoid additional charges</string>
+</resources>
